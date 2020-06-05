@@ -2,6 +2,7 @@ package vn.edu.lukepham;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -31,7 +32,7 @@ public class CompareTheTriplets {
     }
 
     public static void main(String[] args) throws IOException {
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        BufferedReader bufferedReader = new BufferedReader(new FileReader("input/compare_triplets.txt"));
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("output/compare_triplets.txt"));
 
         List<Integer> a = Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))

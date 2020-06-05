@@ -2,6 +2,7 @@ package vn.edu.lukepham;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -28,16 +29,15 @@ public class SimpleArraySum {
         return sum;
     }
 
-    private static final Scanner scanner = new Scanner(System.in);
-
     public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new FileReader("input/simple_array_sum.txt"));
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("output/simple_array_sum.txt"));
 
-        int arCount = Integer.parseInt(scanner.nextLine().trim());
+        int arCount = Integer.parseInt(bufferedReader.readLine().trim());
 
         int[] ar = new int[arCount];
 
-        String[] arItems = scanner.nextLine().split(" ");
+        String[] arItems = bufferedReader.readLine().split(" ");
 
         for (int arItr = 0; arItr < arCount; arItr++) {
             int arItem = Integer.parseInt(arItems[arItr].trim());
